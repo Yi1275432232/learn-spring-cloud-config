@@ -25,12 +25,6 @@ eureka:
     service-url:
       defaultZone: http://eureka2334.com:2334/eureka/, http://eureka2335.com:2335/eureka/
 
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "refresh"
-
 ---
 server:
   port: 2333
@@ -39,11 +33,6 @@ spring:
   profiles: test
   application:
     name: eureka-config-2333
-  cloud:
-    bus:
-      enabled: true
-      trace:
-        enabled: true
   rabbitmq:
     host: 123.57.22.79
     port: 5672
@@ -58,9 +47,3 @@ eureka:
     fetch-registry: false
     service-url:
       defaultZone: http://eureka2334.com:2334/eureka/, http://eureka2335.com:2335/eureka/
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: "refresh"

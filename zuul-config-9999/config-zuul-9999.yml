@@ -9,23 +9,12 @@ server:
 spring:
   profiles: dev
   application:
-    name: zuul-config-9999
-  cloud:
-    bus:
-      enabled: true
-      trace:
-        enabled: true      
+    name: zuul-config-9999   
   rabbitmq:
     host: 123.57.22.79
     port: 5672
     username: yibbit
     password: Yiang2Rabbit
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: 'refresh'
 
 eureka:
   client:
@@ -43,11 +32,6 @@ spring:
   profiles: test
   application:
     name: zuul-config-9999
-  cloud:
-    bus:
-      enabled: true
-      trace:
-        enabled: true      
   rabbitmq:
     host: 123.57.22.79
     port: 5672
@@ -61,10 +45,3 @@ eureka:
   instance:
     instance-id: zuul9999.com
     prefer-ip-address: true
-
-management:
-  endpoints:
-    web:
-      exposure:
-        include: 'refresh'
-        
