@@ -10,6 +10,11 @@ spring:
   profiles: dev
   application:
     name: eureka-config-2333
+  rabbitmq:
+    host: 123.57.22.79
+    port: 5672
+    username: yibbit
+    password: Yiang2Rabbit
 
 eureka:
   instance:
@@ -19,6 +24,12 @@ eureka:
     fetch-registry: false
     service-url:
       defaultZone: http://eureka2334.com:2334/eureka/, http://eureka2335.com:2335/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "refresh"
 
 ---
 server:
@@ -28,6 +39,16 @@ spring:
   profiles: test
   application:
     name: eureka-config-2333
+  cloud:
+    bus:
+      enabled: true
+      trace:
+        enabled: true
+  rabbitmq:
+    host: 123.57.22.79
+    port: 5672
+    username: yibbit
+    password: Yiang2Rabbit
 
 eureka:
   instance:
@@ -37,3 +58,9 @@ eureka:
     fetch-registry: false
     service-url:
       defaultZone: http://eureka2334.com:2334/eureka/, http://eureka2335.com:2335/eureka/
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "refresh"

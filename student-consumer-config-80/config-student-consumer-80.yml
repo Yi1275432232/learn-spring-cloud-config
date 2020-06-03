@@ -10,6 +10,16 @@ spring:
   application:
     name: student-consumer-config-80
   profiles: dev
+  cloud:
+    bus:
+      enabled: true
+      trace:
+        enabled: true      
+  rabbitmq:
+    host: 123.57.22.79
+    port: 5672
+    username: yibbit
+    password: Yiang2Rabbit
 
 eureka:
   client:
@@ -17,6 +27,12 @@ eureka:
       defaultZone: http://eureka2333.com:2333/eureka, http://eureka2334.com:2334/eureka, http://eureka2335.com:2335/eureka
   instance:
     instance-id: student-consumer-config-80
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'refresh'
 
 ---
 server:
@@ -26,10 +42,27 @@ spring:
   application:
     name: student-consumer-config-80
   profiles: test
-
+  cloud:
+    bus:
+      enabled: true
+      trace:
+        enabled: true      
+  rabbitmq:
+    host: 123.57.22.79
+    port: 5672
+    username: yibbit
+    password: Yiang2Rabbit
+    
 eureka:
   client:
     service-url:
       defaultZone: http://eureka2333.com:2333/eureka, http://eureka2334.com:2334/eureka, http://eureka2335.com:2335/eureka
   instance:
     instance-id: student-consumer-config-80
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'refresh'
+        

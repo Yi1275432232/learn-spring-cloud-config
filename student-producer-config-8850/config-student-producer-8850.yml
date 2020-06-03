@@ -19,6 +19,16 @@ spring:
     url: jdbc:mysql://localhost:3306/learn_spring_cloud_3
     username: yisql
     password: Yiang2MySQL
+  cloud:
+    bus:
+      enabled: true
+      trace:
+        enabled: true      
+  rabbitmq:
+    host: 123.57.22.79
+    port: 5672
+    username: yibbit
+    password: Yiang2Rabbit
 
 eureka:
   client:
@@ -26,6 +36,12 @@ eureka:
       defaultZone: http://eureka2333.com:2333/eureka, http://eureka2334.com:2334/eureka, http://eureka2335.com:2335/eureka
   instance:
     instance-id: student-producer-config-8850
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'refresh'
 
 ---
 server:
@@ -44,10 +60,27 @@ spring:
     url: jdbc:mysql://localhost:3306/learn_spring_cloud_3
     username: yisql
     password: Yiang2MySQL
-
+  cloud:
+    bus:
+      enabled: true
+      trace:
+        enabled: true      
+  rabbitmq:
+    host: 123.57.22.79
+    port: 5672
+    username: yibbit
+    password: Yiang2Rabbit
+    
 eureka:
   client:
     service-url:
       defaultZone: http://eureka2333.com:2333/eureka, http://eureka2334.com:2334/eureka, http://eureka2335.com:2335/eureka
   instance:
     instance-id: student-producer-config-8850
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: 'refresh'
+        
