@@ -1,0 +1,31 @@
+spring:
+  profiles:
+    active: dev
+
+---
+server:
+  port: 9948
+
+spring:
+  profiles: dev
+  application:
+    name: student-producer
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka2333.com:2333/eureka, http://eureka2334.com:2334/eureka, http://eureka2335.com:2335/eureka
+
+---
+server:
+  port: 9949
+
+spring:
+  profiles: test
+  application:
+    name: student-producer
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka2333.com:2333/eureka, http://eureka2334.com:2334/eureka, http://eureka2335.com:2335/eureka
