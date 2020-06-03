@@ -7,9 +7,9 @@ server:
   port: 2333
 
 spring:
-  profile: dev
+  profiles: dev
   application:
-    name: config-eureka2333
+    name: config-eureka-2333
 
 eureka:
   instance:
@@ -25,9 +25,9 @@ server:
   port: 2333
 
 spring:
-  profile: test
+  profiles: test
   application:
-    name: config-eureka2333
+    name: config-eureka-2333
 
 eureka:
   instance:
